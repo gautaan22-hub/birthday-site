@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Dad</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      overflow: hidden;
+    }
+
+    .card, .surprise-page {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(12px);
+      border-radius: 24px;
+      padding: 40px;
+      width: 90%;
+      max-width: 750px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      animation: fadeIn 1.2s ease;
+    }
+
+    .surprise-page {
+      display: none;
+      position: relative;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      font-weight: normal;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      background: #ffd369;
+      color: #1e3c72;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1rem;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #fff3c4;
+    }
+
+    .kitty {
+      font-size: 5rem;
+      display: inline-block;
+      animation: dance 1s infinite ease-in-out;
+      margin: 0 20px;
+    }
+
+    .center-kitty {
+      font-size: 6rem;
+      animation: bounce 1.2s infinite;
+      margin: 20px 0;
+    }
+
+    .celebration {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+
+    @keyframes dance {
+      0% { transform: translateY(0) rotate(0deg); }
+      25% { transform: translateY(-10px) rotate(-10deg); }
+      50% { transform: translateY(0) rotate(10deg); }
+      75% { transform: translateY(-10px) rotate(-10deg); }
+      100% { transform: translateY(0) rotate(0deg); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+
+  <!-- First Page -->
+  <div class="card" id="mainCard">
+    <h1>🎉 Happy Birthday Dad 🎂</h1>
+    <h2>You are my hero, my guide, and my biggest strength ❤️</h2>
+
+    <div style="margin-bottom: 20px;">
+      <img src="image.png" alt="Dad Photo"
+        style="width:180px;height:180px;object-fit:cover;border-radius:20px;border:3px solid white;">
+    </div>
+
+    <p>
+      Thank you for your love, support, and every sacrifice you made for me.
+      Today is your special day, and I want to remind you how much you mean to me ❤️
+    </p>
+
+    <button class="btn" onclick="openSurprise()">🥳 Click for Surprise 🥳</button>
+  </div>
+
+  <!-- Surprise Page -->
+  <div class="surprise-page" id="surprisePage">
+    <h1>🎀 Special Surprise for Dad 🎀</h1>
+
+    <div style="display:flex; justify-content:center; align-items:center; gap:20px; flex-wrap:wrap; margin:20px 0;">
+      <img src="kitty.png" alt="Cute Kitty" style="width:140px; height:140px; object-fit:cover; border-radius:20px; animation:dance 1s infinite ease-in-out; border:3px solid white;">
+      <img src="image.png".png" alt="Cute Kitty" style="width:180px; height:180px; object-fit:cover; border-radius:24px;">
+      <img src="kitty.png" alt="Cute Kitty" style="width:140px; height:140px; object-fit:cover; border-radius:20px; animation:dance 1s infinite ease-in-out; border:3px solid white;">
+    </div>
+
+    <p>
+      Cute pink kitty says — Happy Birthday Dad ❤️<br>
+      Wishing you happiness, health, success and lots of smiles always!
+    </p>
+
+    <div class="celebration">
+      🎆 ✨ 🎉 🥳 🎂 🎇 💖
+    </div>
+
+    <p style="margin-top: 25px; font-style: italic;">
+      — With Love, Your daughter ❤️
+    </p>
+  </div>
+
+  <script>
+    function openSurprise() {
+      document.getElementById('mainCard').style.display = 'none';
+      document.getElementById('surprisePage').style.display = 'block';
+
+      const music = document.getElementById('birthdayMusic');
+      music.play().catch(() => {
+        console.log('Autoplay blocked by browser');
+      });
+    }
+  </script>
+
+</body>
+</html>
+
